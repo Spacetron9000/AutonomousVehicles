@@ -28,8 +28,8 @@ def whateverSideTheLaneIsOn(img, boundL, boundR, hl, sl, vl, hh, sh, vh):
 	foundit = False
 	counter1 = boundL #starting pixel column
 	counter2 = boundR
-	fuckit = True
-	while (fuckit):
+	fff = True
+	while (fff):
 		if (img[scanningRow, counter1] >= [hl,sl,vl] && img [scanningRow, counter1] <= [hh, sh, vh]):
 			return 1
 		if (img[scanningRow, counter2] >= [hl,sl,vl] && img [scanningRow, counter2] <= [hh, sh, vh]):
