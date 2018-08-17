@@ -20,6 +20,15 @@ drive_msg_stamped.drive = drive_msg
 global proportional_error
 global integral_error
 global derivative_error
+
+#Just to clarify, while these variable names were pretty silly, I realize now how it might get confusing to 
+#people not a part of our AV team. 
+#memes = the current part of the LiDAR we're getting data from
+#alternateMeme = the part of the LiDAR we aren't using
+#leftMeme = the left segment of LiDAR data
+#rightMeme = the right segment of LiDAR data
+
+#I'll probably go back and clean it up a bit more thoroughly at some point, but in the meantime there's this helpful annotation
 global memes
 global alternateMeme
 global leftMeme
