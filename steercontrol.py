@@ -22,41 +22,6 @@ import math
 from sensor_msgs.msg import Image
 from ackermann_msgs.msg import AckermannDriveStamped, AckermannDrive
 
-'''
-def whateverSideTheLaneIsOn(img, boundL, boundR, hl, sl, vl, hh, sh, vh):
-	scanningRow = 1
-	foundit = False
-	counter1 = boundL #starting pixel column
-	counter2 = boundR
-	fff = True
-	while (fff):
-		if (img[scanningRow, counter1] >= [hl,sl,vl] && img [scanningRow, counter1] <= [hh, sh, vh]):
-			return 1
-		if (img[scanningRow, counter2] >= [hl,sl,vl] && img [scanningRow, counter2] <= [hh, sh, vh]):
-			return -1
-		counter1-=1
-		counter2+=1
-'''
-
-
-'''
-def findMeSomeLines(img, hl, sl, vl, hh, sh, vh):
-	x = 0
-	lline = -1
-	rline = -1
-	while( x < 672 ):
-		if (img[row,x] >= [hl, sl, vl] && img[row,x] <= [hh, sh, vh]):
-			lline = x
-			break
-		x+=1
-	while( x < 672 ):
-		if (img[row,x] <= [hl, sl, vl] || img[row,x] >= [hh, sh, vh]):
-			rline = x
-			break
-		x+=1
-	return {lline, rline}
-'''
-
 def scanPixelLength(img, leftLine, rightLine, hl, sl, vl, hh, sh, vh):
 
 #Start: starting column
@@ -93,7 +58,6 @@ def scanPixelLength(img, leftLine, rightLine, hl, sl, vl, hh, sh, vh):
 	return (pixellength,direction)
 
 def pidLoop ():
-
 	kp = 0
 	ki = 0
 	kd = 0
@@ -121,20 +85,6 @@ def pidLoop ():
 
 		outputAngle = direction*(kp*proportional_error+ki*integral_error+kd*derivative_error)
 
-		#publish the angle to the steering system
-
-
-
-
-#Function to determine if there's no lane on the camera at all
-
-
-
-
-
-
-
-
 
 #Image receiving
 
@@ -145,10 +95,6 @@ class image_sub:
     def callback(self, data):
         #print("callback")
         cv2.imshow('cv_somethign',cv2.imdecode('.jpg', data))
-
-
-
-
 
 #Main Function
 def main(args):
